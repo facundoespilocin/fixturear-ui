@@ -1,0 +1,91 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat');
+
+* {
+    font-family: Montserrat;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+/* Fondo global con degrade */
+body {
+  background: radial-gradient(circle at center, 
+    rgba(34, 197, 94, 1) 0%,     /* verde fuerte */
+    rgba(86, 192, 224, 0.2) 60%, /* celeste sutil */
+    rgba(255, 255, 255, 0.6) 100%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: 'Poppins', sans-serif;
+  color: #000;
+}
+
+/* Ejemplo: si querés definir manual clases custom, aunque mejor usar Tailwind */
+@layer utilities {
+  .bg-primary {
+    background-color: #22C55E; /* verde campo */
+  }
+
+  .hover\:bg-primary:hover {
+    background-color: #16A34A ; /* celeste camiseta */
+  }
+
+  .text-primary {
+    color: #22C55E;
+  }
+
+  .bg-secondary {
+    background-color: #18b2e0; /* verde campo */
+  }
+
+  .hover\:bg-secondary:hover {
+    background-color: rgb(59,161,193); /* celeste camiseta */
+  }
+
+  .container {
+    @apply bg-white/50 shadow-lg rounded-lg p-3 backdrop-blur-lg border border-white/30;
+  }
+
+  .navbar-transition
+  {
+    @apply transition duration-300 hover:scale-105
+  }
+
+  /* Buttons */
+  .btn-primary {
+    @apply bg-[#22C55E] hover:bg-[#16A34A] font-bold py-2 px-4 rounded transition duration-300 hover:scale-105 shadow-md hover:shadow-lg;
+  }
+
+  .btn-secondary {
+    @apply border-2 border-[#22C55E] font-bold py-2 px-4 rounded transition duration-300 hover:bg-[#22C55E] hover:scale-105 shadow-md hover:shadow-lg;
+  }
+
+  .btn-danger {
+    @apply bg-red-600 hover:bg-red-800 text-white font-bold py-2 px-4 rounded transition duration-300 hover:scale-105 shadow-md hover:shadow-lg;
+  }
+
+  .btn-outline {
+    @apply border-2 border-gray-400 text-gray-600 font-bold py-2 px-4 rounded transition duration-300 hover:bg-gray-200 hover:text-gray-800 hover:scale-105 shadow-md hover:shadow-lg;
+  }
+
+  .btn-disabled {
+    @apply bg-gray-300 text-gray-500 font-bold py-2 px-4 rounded opacity-70 cursor-not-allowed shadow-md hover:shadow-lg;
+  }
+
+  input, textarea, select {
+    @apply border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 transition;
+  }
+}
+
+.navbar-footer-style {
+  @apply bg-gradient-to-r from-green-600 via-green-200 to-green-600 
+         px-6 py-3 flex justify-between items-center 
+         shadow-md shadow-green-300 
+         transition hover:brightness-105 
+         rounded-2xl;
+}
+
+.table-standard {
+  @apply min-w-full border border-green-300 shadow shadow-green-300 rounded-2xl overflow-hidden
+}
