@@ -7,6 +7,9 @@ import Footer from "./components/Footer";
 import Profile from "./pages/Profile";
 import Register from "./pages/RegisterWizard";
 import Matches from "./pages/Matches";
+import Contact from "./pages/Contact";
+import Faq from "./pages/Faq";
+import Privacy from "./pages/Privacy";
 import ProtectedRoute from "./components/ProtectedRoute";
 
 function Layout() {
@@ -32,6 +35,9 @@ const router = createBrowserRouter([
       { path: "login", element: <Login /> },
       { path: "register", element: <Register /> }, 
       { path: "matches", element: <Matches /> }, 
+      { path: "faq", element: <Faq /> }, 
+      { path: "contact", element: <Contact /> }, 
+      { path: "privacy", element: <Privacy /> }, 
       {
         element: <ProtectedRoute />, 
         children: [
